@@ -22,3 +22,7 @@ label {
 .input {
   color: #eee;
 }
+.completed {
+  color: rgb(226, 157, 157);
+  text-decoration: line-through;
+}
