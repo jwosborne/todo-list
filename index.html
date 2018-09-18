@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Todo List</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="center-align">
+            Todo List
+        </h1>
+        <form id="todoForm" action="#">
+            <label for="textInput">What would you like to do today?</label>
+            <input type="text" id="todoInput" class="input" placeholder="Today I will..">
+            <label for="timeInput">When would you like to have this done?</label>
+            <input type="time" id="timeInput" class="input" placeholder="What Time?">
+            <button id="submit" class="btn" type="submit" name="action">Submit</button>
+        </form>
+        <br>
+        <ul id="todoResults" class="collection">
+        </ul>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
