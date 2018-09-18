@@ -9,6 +9,10 @@ function saveTodo(name) {
   var todoName = document.getElementById("todoInput").value;
   var todoTime = document.getElementById("timeInput").value;
 
+  // Form validation
+  if (!validateForm(todoName, todoTime)) {
+    return false;
+  }
   var todo = {
     name: todoName,
     time: todoTime
@@ -46,7 +50,7 @@ function saveTodo(name) {
 // Delete Todo
 function deleteTodo(e) {
   // Make sure delete button clicked
-  if (!e.target.classList.contains("delete")) {
+  if (!e.target.classList.contains("material-icons")) {
     return false;
   }
   var li = e.target.parentElement;
@@ -58,11 +62,11 @@ function deleteTodo(e) {
     // "delete" is added because we are using Materialize
     if (
       todos[i].name + " " + todos[i].time + "delete" ===
-      li.parentElement.innerText
+      li.parentElement.textContent
     ) {
       todos.splice(i, 1);
     } else {
-      console.log(li.parentElement.innerText);
+      console.log(li.parentElement.textContent);
       console.log(todos[i].name + " " + todos[i].time + "delete");
     }
   }
@@ -95,6 +99,15 @@ function fetchTodos() {
       '<span class="time">' +
       time +
       "</span>" +
-      '<a href="#!" class="secondary-content delete"><i class="material-icons delete">delete</i></a></li>';
+      '<a href="#!" class="secondary-content"><i class="material-icons">delete</i></a></li>';
   }
+}
+
+// Validate Form
+function validateForm(name, time) {
+  if (!name || !time) {
+    alert("Please fill in the form");
+    return false;
+  }
+  return true;
 }
